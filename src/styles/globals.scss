@@ -1,0 +1,88 @@
+@import 'fonts.css';
+@import 'variables';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  // outline: olivedrab solid 2px !important; //? use for debugging layouts
+}
+
+html,
+body {
+  background: theme('colors.white');
+  color: theme('colors.slate.700');
+}
+html {
+  direction: rtl;
+  font-family: $FONT_FA;
+}
+
+// [data-theme='dark'],
+// [data-theme='dark'] body {
+//   background: theme('colors.slate.900') !important;
+//   color: theme('colors.slate.400') !important;
+// }
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400  hover:bg-slate-500  rounded-lg;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.ql-editor {
+  text-align: right !important;
+  direction: rtl;
+  font-family: $FONT_FA;
+}
+
+.ql-toolbar.ql-snow {
+  & > * {
+    float: left;
+  }
+}
+
+//FIXME toastify font
+
+.quill {
+  height: 100%;
+  width: 100%;
+}
+
+input[type='radio']:after {
+  width: 17px;
+  height: 17px;
+  border-radius: 15px;
+  top: 2px;
+  left: 2px;
+  position: relative;
+  background-color: transparent;
+  border: 1px #848484 solid;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 16px;
+  height: 16px;
+  border-radius: 15px;
+  top: 2px;
+  left: 2px;
+  position: relative;
+  background-color: #9f9b9b;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
